@@ -130,9 +130,9 @@ setup_github() {
   author_name="${4:-$(ask_for "Your name" "$(git config user.name 2>/dev/null)")}"
   author_email="${5:-$(ask_for "Your email address" "$(git config user.email 2>/dev/null)")}"
 
-  tool_repo="${6:-$(ask_for "$HELP_TOOL_REPO" "https://github.com/$github_username/$tool_name")}"
-  tool_homepage="${7:-$(ask_for "$HELP_TOOL_HOMEPAGE" "https://github.com/$github_username/$tool_name")}"
-  license_keyword="${8:-$(ask_license)}"
+  tool_repo="${5:-$(ask_for "$HELP_TOOL_REPO" "https://github.com/$github_username/$tool_name")}"
+  tool_homepage="${6:-$(ask_for "$HELP_TOOL_HOMEPAGE" "$tool_repo")}"
+  license_keyword="${7:-$(ask_license)}"
   license_keyword="$(echo "$license_keyword" | tr '[:upper:]' '[:lower:]')"
 
   primary_branch="main"
@@ -243,9 +243,15 @@ setup_gitlab() {
   author_email="${5:-$(ask_for "Your email address" "$(git config user.email 2>/dev/null)")}"
 
   github_username="${3:-$(ask_for "Tool GitHub username")}"
+<<<<<<< HEAD
   tool_repo="${6:-$(ask_for "$HELP_TOOL_REPO" "https://github.com/$github_username/$tool_name")}"
   tool_homepage="${7:-$(ask_for "$HELP_TOOL_HOMEPAGE" "https://github.com/$github_username/$tool_name")}"
   license_keyword="${8:-$(ask_license)}"
+=======
+  tool_repo="${5:-$(ask_for "$HELP_TOOL_REPO" "https://github.com/$github_username/$tool_name")}"
+  tool_homepage="${6:-$(ask_for "$HELP_TOOL_HOMEPAGE" "$tool_repo")}"
+  license_keyword="${7:-$(ask_license)}"
+>>>>>>> d9fbecef6b971dfc5f9e57937e826b0fd0f3e301
   license_keyword="$(echo "$license_keyword" | tr '[:upper:]' '[:lower:]')"
 
   primary_branch="main"
